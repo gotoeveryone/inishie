@@ -1,7 +1,6 @@
 <script>
   export let items;
-  const click = () =>
-    alert("ここは入り口ではありません！\n本当の入り口を探してねヽ(*´∀｀)ノ");
+  const click = () => alert("工事中！");
 </script>
 
 <table>
