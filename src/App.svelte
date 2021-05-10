@@ -55,10 +55,9 @@
 <style>
   main {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(0deg, #3c3d3c, #cde027, #1038bd);
+    overflow: auto;
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto 30px;
   }
 
   h1 {
