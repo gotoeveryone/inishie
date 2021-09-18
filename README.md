@@ -1,4 +1,4 @@
-# inishie
+# Inishie
 
 ## Requirements
 

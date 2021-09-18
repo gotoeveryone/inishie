@@ -87,6 +87,9 @@
       </li>
     {/each}
   </ul>
+  <div class="back-link">
+    <a href="/">戻る</a>
+  </div>
 </div>
 
 <style>

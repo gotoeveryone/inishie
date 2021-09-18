@@ -1,5 +1,4 @@
 <script>
-  import { push } from "svelte-spa-router";
   import AppDescription from "../components/Description.svelte";
   import AppFooter from "../components/Footer.svelte";
   import AppLinks from "../components/Links.svelte";
@@ -7,6 +6,11 @@
   const names = ["太郎", "次郎", "三郎"];
   const name = names[Math.floor(Math.random() * names.length)];
   const items = [
+    {
+      link: "/chat",
+      label: "チャット",
+      description: "お気軽にコメントしていってください！",
+    },
     { label: "べからず集", description: "はじめにこちらをご覧ください" },
     {
       label: "メインコンテンツ",
@@ -23,25 +27,25 @@
   const hideTable = () => {
     isShowTable = false;
   };
-
 </script>
 
 <h1>Welcome to My website!</h1>
 <AppDescription />
 <div>前回のキリ番は <span class="highlight">{name}</span> さんでした。</div>
 <div class="marquee">
-  <div class="marquee-inner">Inishie へようこそ！ゆっくりしていってください。</div>
+  <div class="marquee-inner">
+    Inishie へようこそ！ゆっくりしていってください。
+  </div>
 </div>
-<button on:click={() => push('/chat')}>CHAT</button>
 {#if isShowTable}
-<center>
-  <AppTable {items} />
-</center>
-<div class="back-link">
-  <a href={"javascript:void(0)"} on:click={hideTable}>戻る</a>
-</div>
+  <center>
+    <AppTable {items} />
+  </center>
+  <div class="back-link">
+    <a href={"javascript:void(0)"} on:click={hideTable}>戻る</a>
+  </div>
 {:else}
-<AppLinks on:show={showTable} />
+  <AppLinks on:show={showTable} />
 {/if}
 <AppFooter />
 
@@ -83,8 +87,12 @@
   }
 
   @keyframes marqueeAnimation {
-    0% { transform: translate(65%); }
-    100% { transform: translate(-65%); }
+    0% {
+      transform: translate(65%);
+    }
+    100% {
+      transform: translate(-65%);
+    }
   }
 
   @media (max-width: 639px) {

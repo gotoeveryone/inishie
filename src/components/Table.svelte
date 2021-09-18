@@ -1,12 +1,14 @@
 <script>
+  import { push } from "svelte-spa-router";
+
   export let items;
-  const click = () => alert("工事中！");
+  const click = (item) => (item.link ? push(item.link) : alert("工事中！"));
 </script>
 
 <table>
   {#each items as item}
     <tr>
-      <td><button on:click={click}>{item.label}</button></td>
+      <td><button on:click={click(item)}>{item.label}</button></td>
       <td>{item.description}</td>
     </tr>
   {/each}
