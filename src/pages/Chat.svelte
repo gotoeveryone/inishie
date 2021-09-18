@@ -51,7 +51,7 @@
 
 <div class="container">
   <div class="title">チャットページ</div>
-  <form class="form">
+  <form class="form" on:submit|preventDefault={submit}>
     <div class="form-row">
       <div class="form-control">
         <label for="username">ユーザー名</label>
@@ -66,7 +66,7 @@
     </div>
     <div class="form-row">
       <div class="form-control submit">
-        <button on:click={submit}>送信</button>
+        <button>送信</button>
       </div>
     </div>
   </form>
