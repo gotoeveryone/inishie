@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import AppDescription from "../components/Description.svelte";
   import AppFooter from "../components/Footer.svelte";
   import AppLinks from "../components/Links.svelte";

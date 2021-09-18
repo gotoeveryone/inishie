@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   const counter = Array.from(Array(6).keys(), (i) =>
     Math.floor(Math.random() * 10)
   );

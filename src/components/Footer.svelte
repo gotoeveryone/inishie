@@ -1,7 +1,5 @@
 <footer>
-  <div>
-    &copy; K2SS All rights reserved.
-  </div>
+  <div>&copy; K2SS All rights reserved.</div>
 </footer>
 
 <style>

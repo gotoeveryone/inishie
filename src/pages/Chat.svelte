@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import dayjs from "dayjs";
   import timezone from "dayjs/plugin/timezone";
   import { onMount } from "svelte";
@@ -31,7 +31,7 @@
       .catch(console.error);
   };
 
-  let messages = {};
+  let messages = [];
 
   onMount(async () => {
     const messagesRef = await firebase
