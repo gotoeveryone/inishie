@@ -8,8 +8,14 @@
 <table>
   {#each items as item}
     <tr>
-      <td><button on:click={click(item)}>{item.label}</button></td>
-      <td>{item.description}</td>
+      <td>
+        <!-- svelte-ignore a11y-missing-attribute -->
+        <a on:click={click(item)}>{item.label}</a>
+        {#if item.isNew}
+          <span class="is-new">NEW!</span>
+        {/if}
+      </td>
+      <td contenteditable="true" bind:innerHTML={item.description} />
     </tr>
   {/each}
 </table>
@@ -31,7 +37,8 @@
     vertical-align: middle;
   }
 
-  button {
-    width: 100%;
+  .is-new {
+    color: red;
+    font-size: 80%;
   }
 </style>

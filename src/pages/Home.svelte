@@ -7,17 +7,28 @@
   const name = names[Math.floor(Math.random() * names.length)];
   const items = [
     {
+      isNew: true,
       link: "/chat",
       label: "チャット",
-      description: "お気軽にコメントしていってください！",
+      description:
+        "チャット開設しました。<br/>お気軽にコメントしていってください！",
     },
-    { label: "べからず集", description: "はじめにこちらをご覧ください" },
     {
+      isNew: false,
+      label: "べからず集",
+      description: "はじめにこちらをご覧ください",
+    },
+    {
+      isNew: false,
       label: "メインコンテンツ",
       description: "当サイトのメインコンテンツです",
     },
-    { label: "掲示板", description: "キリ番報告はこちらからどうぞ" },
-    { label: "リンク集", description: "相互リンク歓迎！" },
+    {
+      isNew: false,
+      label: "掲示板",
+      description: "キリ番報告はこちらからどうぞ",
+    },
+    { isNew: false, label: "リンク集", description: "相互リンク歓迎！" },
   ];
 
   let isShowTable = false;
