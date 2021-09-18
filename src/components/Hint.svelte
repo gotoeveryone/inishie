@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   export let max;
   export let hitNumber;
 

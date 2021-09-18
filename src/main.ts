@@ -8,7 +8,7 @@ document.oncontextmenu = () => {
 
 // Firebase の設定
 const config = {
-  databaseURL: DATABASE_URL,
+  databaseURL: process.env.DATABASE_URL,
 };
 firebase.initializeApp(config);
 

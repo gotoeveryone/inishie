@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Router from "svelte-spa-router";
   import Chat from "./pages/Chat.svelte";
   import Home from "./pages/Home.svelte";
