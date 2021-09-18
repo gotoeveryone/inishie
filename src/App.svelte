@@ -1,11 +1,11 @@
 <script>
   import Router from "svelte-spa-router";
-  import Chat from './pages/Chat.svelte';
-  import Home from './pages/Home.svelte';
+  import Chat from "./pages/Chat.svelte";
+  import Home from "./pages/Home.svelte";
 
-  const   routes = {
-    '/': Home,
-    '/chat': Chat
+  const routes = {
+    "/": Home,
+    "/chat": Chat,
   };
 
   let stalker;
@@ -17,7 +17,7 @@
 </script>
 
 <main>
-  <Router routes={routes} />
+  <Router {routes} />
 </main>
 <div class="stalker" bind:this={stalker} />
 
