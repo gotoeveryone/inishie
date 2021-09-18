@@ -1,8 +1,16 @@
-<script>
+<script lang="ts">
   import { push } from "svelte-spa-router";
 
-  export let items;
-  const click = (item) => (item.link ? push(item.link) : alert("工事中！"));
+  interface Item {
+    isNew: boolean;
+    label: string;
+    link: string;
+    description: string;
+  }
+
+  export let items: Item[];
+  const click = (item: Item) =>
+    item.link ? push(item.link) : alert("工事中！");
 </script>
 
 <table>
@@ -10,7 +18,7 @@
     <tr>
       <td>
         <!-- svelte-ignore a11y-missing-attribute -->
-        <a on:click={click(item)}>{item.label}</a>
+        <a on:click={() => click(item)}>{item.label}</a>
         {#if item.isNew}
           <span class="is-new">NEW!</span>
         {/if}
