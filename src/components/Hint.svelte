@@ -4,16 +4,16 @@
 
   const hintLabel = () => {
     if (hitNumber === max) {
-      return '一番大きい数';
+      return "一番大きい数";
     }
     if (hitNumber % 3 === 0) {
-      return '3で割れる数字です';
+      return "3で割れる数字です";
     }
     if (hitNumber % 2 === 0) {
-      return '偶数かも…？'
+      return "偶数かも…？";
     }
-    return '奇数かも…？';
-  }
+    return "奇数かも…？";
+  };
 </script>
 
 <div class="hint">
