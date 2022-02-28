@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let max;
-  export let hitNumber;
+  export let max: number;
+  export let hitNumber: number;
 
   const hintLabel = () => {
     if (hitNumber === max) {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  const counter = Array.from(Array(6).keys(), (i) =>
+  const counter = Array.from(Array(6).keys(), () =>
     Math.floor(Math.random() * 10)
   );
 </script>

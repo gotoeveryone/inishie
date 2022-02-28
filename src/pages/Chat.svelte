@@ -11,7 +11,7 @@
   let username = null;
   let content = null;
 
-  const submit = () => {
+  const submit = async () => {
     if (username == null || username.length === 0) {
       alert("※ユーザー名は必須です！");
       return;
@@ -33,8 +33,8 @@
 
   let messages = [];
 
-  onMount(async () => {
-    const messagesRef = await firebase
+  onMount(() => {
+    const messagesRef = firebase
       .database()
       .ref("messages")
       .orderByChild("sortKey")

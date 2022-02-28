@@ -4,7 +4,7 @@
   interface Item {
     isNew: boolean;
     label: string;
-    link: string;
+    link?: string;
     description: string;
   }
 

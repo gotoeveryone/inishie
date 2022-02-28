@@ -1,5 +1,7 @@
 # Inishie
 
+![Build Status](https://github.com/gotoeveryone/inishie/workflows/Build/badge.svg)
+
 ## Requirements
 
 - nodejs
@@ -14,4 +16,10 @@ $ npm i
 
 ```console
 $ npm run dev
+```
+
+## Validate
+
+```console
+$ npm run validate
 ```

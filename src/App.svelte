@@ -8,7 +8,7 @@
     "/chat": Chat,
   };
 
-  let stalker;
+  let stalker: HTMLElement;
 
   document.addEventListener("mousemove", (e) => {
     stalker.style.transform =

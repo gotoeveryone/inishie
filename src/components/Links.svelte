@@ -6,7 +6,7 @@
 
   const max = 10;
   const hitNumber = Math.ceil(Math.random() * max);
-  const click = (num) => {
+  const click = (num: number) => {
     if (hitNumber !== num) {
       alert("はずれ！(>_<)");
       return;
