@@ -1,12 +1,8 @@
 <script lang="ts">
-  import dayjs from "dayjs";
-  import timezone from "dayjs/plugin/timezone";
   import { onMount } from "svelte";
   import firebase from "firebase/app";
   import "firebase/database";
-
-  dayjs.extend(timezone);
-  dayjs.tz.setDefault("Asia/Tokyo");
+  import dayjs from "../helpers/dayjs";
 
   let username = null;
   let content = null;
