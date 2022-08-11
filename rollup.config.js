@@ -44,7 +44,8 @@ export default {
   },
   plugins: [
     replace({
-      'process.env.DATABASE_URL': JSON.stringify(process.env.DATABASE_URL)
+      'process.env.DATABASE_URL': JSON.stringify(process.env.DATABASE_URL),
+      'process.env.DEBUG': !production,
     }),
     svelte({
       preprocess: sveltePreprocess({ sourceMap: !production }),

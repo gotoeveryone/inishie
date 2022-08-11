@@ -43,15 +43,17 @@
     isShowTable = false;
   };
 
-  onMount(async () => {
-    const ref = firebase.database().ref("access_logs");
-    const userAgent = window.navigator.userAgent;
-    const timestamp = Date.now();
-    return ref.push({ userAgent, timestamp }).catch(console.error);
-  });
+  if (!process.env.DEBUG) {
+    onMount(async () => {
+      const ref = firebase.database().ref("access_logs");
+      const userAgent = window.navigator.userAgent;
+      const timestamp = Date.now();
+      return ref.push({ userAgent, timestamp }).catch(console.error);
+    });
+  }
 </script>
 
-<h1>Welcome to My website!</h1>
+<h1>-Inishie-</h1>
 <AppDescription />
 <div>前回のキリ番は <span class="highlight">{name}</span> さんでした。</div>
 <div class="marquee">
@@ -77,7 +79,8 @@
     font-style: italic;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 5rem;
+    font-size: 6rem;
+    letter-spacing: 1.2rem;
   }
 
   .highlight {
