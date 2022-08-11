@@ -18,7 +18,8 @@
         "チャット開設しました。<br/>お気軽にコメントしていってください！",
     },
     {
-      isNew: false,
+      isNew: true,
+      link: "/bekarazu",
       label: "べからず集",
       description: "はじめにこちらをご覧ください",
     },

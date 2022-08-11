@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import firebase from "firebase/app";
   import "firebase/database";
+  import BackToTop from "../components/BackToTop.svelte";
   import dayjs from "../helpers/dayjs";
 
   let username = null;
@@ -83,9 +84,7 @@
       </li>
     {/each}
   </ul>
-  <div class="back-link">
-    <a href="/">戻る</a>
-  </div>
+  <BackToTop />
 </div>
 
 <style>
