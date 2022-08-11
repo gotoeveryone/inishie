@@ -1,8 +1,12 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import AppDescription from "../components/Description.svelte";
   import AppFooter from "../components/Footer.svelte";
   import AppLinks from "../components/Links.svelte";
   import AppTable from "../components/Table.svelte";
+  import firebase from "firebase/app";
+  import "firebase/database";
+
   const names = ["太郎", "次郎", "三郎"];
   const name = names[Math.floor(Math.random() * names.length)];
   const items = [
@@ -38,6 +42,13 @@
   const hideTable = () => {
     isShowTable = false;
   };
+
+  onMount(async () => {
+    const ref = firebase.database().ref("access_logs");
+    const userAgent = window.navigator.userAgent;
+    const timestamp = Date.now();
+    return ref.push({ userAgent, timestamp }).catch(console.error);
+  });
 </script>
 
 <h1>Welcome to My website!</h1>

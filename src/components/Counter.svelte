@@ -1,7 +1,19 @@
 <script lang="ts">
-  const counter = Array.from(Array(6).keys(), () =>
-    Math.floor(Math.random() * 10)
-  );
+  import { onMount } from "svelte";
+  import firebase from "firebase/app";
+  import "firebase/database";
+
+  let count = 0;
+  $: counter = count.toString().padStart(6, "0");
+
+  onMount(async () => {
+    return firebase
+      .database()
+      .ref("access_logs")
+      .on("value", (snapshot) => {
+        count = snapshot.numChildren();
+      });
+  });
 </script>
 
 <div class="counter">
