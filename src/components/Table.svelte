@@ -45,6 +45,10 @@
     vertical-align: middle;
   }
 
+  a {
+    font-weight: bold;
+  }
+
   .is-new {
     color: red;
     font-size: 80%;
