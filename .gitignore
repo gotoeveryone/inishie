@@ -111,3 +111,9 @@ build
 
 # nodenv
 .node-version
+
+# asdf
+.tool-versions
+
+# Firebase
+.firebaserc
