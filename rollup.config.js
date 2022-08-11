@@ -44,6 +44,7 @@ export default {
   },
   plugins: [
     replace({
+      preventAssignment: true,
       'process.env.DATABASE_URL': JSON.stringify(process.env.DATABASE_URL),
       'process.env.DEBUG': !production,
     }),
