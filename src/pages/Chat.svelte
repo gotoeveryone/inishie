@@ -1,48 +1,30 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import firebase from "firebase/app";
-  import "firebase/database";
   import BackToTop from "../components/BackToTop.svelte";
   import dayjs from "../helpers/dayjs";
+  import MessageRepository from "../repositories/message";
 
-  let username = null;
-  let content = null;
+  const repo = new MessageRepository();
+
+  let username: string = "";
+  let content: string = "";
 
   const submit = async () => {
-    if (username == null || username.length === 0) {
+    if (username.length === 0) {
       alert("※ユーザー名は必須です！");
       return;
     }
-    if (content == null || content.length === 0) {
+    if (content.length === 0) {
       alert("※メッセージは必須です！");
       return;
     }
-    const ref = firebase.database().ref("messages");
-    const timestamp = Date.now();
-    return ref
-      .push({ username, content, timestamp, sortKey: timestamp * -1 })
-      .then(() => {
-        // コンテンツは投稿のたびクリアする
-        content = null;
-      })
-      .catch(console.error);
+    return repo.create(username, content).catch(console.error);
   };
 
   let messages = [];
 
-  onMount(() => {
-    const messagesRef = firebase
-      .database()
-      .ref("messages")
-      .orderByChild("sortKey")
-      .limitToLast(10);
-    messagesRef.on("value", (snapshot) => {
-      const r = [];
-      snapshot.forEach((c) => {
-        r.push(c.val());
-      });
-      messages = r.slice();
-    });
+  onMount(async () => {
+    messages = await repo.list();
   });
 </script>
 

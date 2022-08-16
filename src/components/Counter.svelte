@@ -1,18 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import firebase from "firebase/app";
-  import "firebase/database";
+  import AccessLogRepository from "../repositories/access_log";
+
+  const repo = new AccessLogRepository();
 
   let count = 0;
   $: counter = count.toString().padStart(6, "0");
 
   onMount(async () => {
-    return firebase
-      .database()
-      .ref("access_logs")
-      .on("value", (snapshot) => {
-        count = snapshot.numChildren();
-      });
+    count = await repo.count();
   });
 </script>
 
