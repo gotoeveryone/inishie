@@ -4,8 +4,9 @@
   import AppFooter from "../components/Footer.svelte";
   import AppLinks from "../components/Links.svelte";
   import AppTable from "../components/Table.svelte";
-  import firebase from "firebase/app";
-  import "firebase/database";
+  import AccessLogRepository from "../repositories/access_log";
+
+  const repo = new AccessLogRepository();
 
   const names = ["太郎", "次郎", "三郎"];
   const name = names[Math.floor(Math.random() * names.length)];
@@ -46,10 +47,8 @@
 
   if (!process.env.DEBUG) {
     onMount(async () => {
-      const ref = firebase.database().ref("access_logs");
       const userAgent = window.navigator.userAgent;
-      const timestamp = Date.now();
-      return ref.push({ userAgent, timestamp }).catch(console.error);
+      return repo.create(userAgent).catch(console.error);
     });
   }
 </script>
