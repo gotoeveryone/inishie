@@ -1,34 +1,25 @@
-import firebase from "firebase/compat/app";
-import "firebase/compat/database";
+import { get, getDatabase, limitToLast, onValue, orderByChild, push, query, ref } from "firebase/database";
+import type { DatabaseReference } from "firebase/database";
 
 export default class MessageRepository {
-  private ref: firebase.database.Reference;
+  private ref: DatabaseReference;
 
   constructor() {
-    this.ref = firebase.database().ref("messages");
+    this.ref = ref(getDatabase(), "messages");
   }
 
-  async list() {
-    return this.ref
-      .orderByChild("sortKey")
-      .limitToLast(10)
-      .get()
-      .then(((snapshot) => {
-        const r = [];
-        snapshot.forEach((c) => {
-          r.push(c.val());
-        });
-        return r.slice();
-      }));
+  broadcast(callback: Function) {
+    onValue(query(this.ref, orderByChild("sortKey"), limitToLast(20)), (snapshot) => {
+      const r = [];
+      snapshot.forEach((c) => {
+        r.push(c.val());
+      });
+      callback(r.slice());
+    });
   }
 
   async create(username: string, content: string) {
     const timestamp = Date.now();
-    return this.ref
-      .push({ username, content, timestamp, sortKey: timestamp * -1 })
-      .then(() => {
-        // コンテンツは投稿のたびクリアする
-        content = null;
-      });
+    return push(this.ref, { username, content, timestamp, sortKey: timestamp * -1 });
   }
 }

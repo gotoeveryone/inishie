@@ -18,13 +18,21 @@
       alert("※メッセージは必須です！");
       return;
     }
-    return repo.create(username, content).catch(console.error);
+    return repo
+      .create(username, content)
+      .then(async () => {
+        // コンテンツは投稿のたびクリアする
+        content = "";
+      })
+      .catch(console.error);
   };
 
   let messages = [];
 
   onMount(async () => {
-    messages = await repo.list();
+    repo.broadcast((data) => {
+      messages = data;
+    });
   });
 </script>
 
