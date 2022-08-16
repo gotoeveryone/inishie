@@ -1,4 +1,4 @@
-import firebase from "firebase/compat/app";
+import { initializeApp } from "firebase/app";
 import App from './App.svelte';
 
 document.oncontextmenu = () => {
@@ -24,7 +24,7 @@ if ("serviceWorker" in navigator) {
 const config = {
   databaseURL: process.env.DATABASE_URL,
 };
-firebase.initializeApp(config);
+initializeApp(config);
 
 const app = new App({
   target: document.body,
