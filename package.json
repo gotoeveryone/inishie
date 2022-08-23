@@ -30,7 +30,7 @@
   "dependencies": {
     "dayjs": "^1.11.5",
     "dotenv": "^16.0.1",
-    "firebase": "^9.9.2",
+    "firebase": "^9.9.3",
     "sirv-cli": "^2.0.2"
   },
   "engines": {
