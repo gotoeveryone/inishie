@@ -28,7 +28,7 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "dayjs": "^1.11.5",
+    "dayjs": "^1.11.6",
     "dotenv": "^16.0.3",
     "firebase": "^9.12.1",
     "sirv-cli": "^2.0.2"
