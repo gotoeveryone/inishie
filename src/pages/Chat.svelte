@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import BackToTop from "../components/BackToTop.svelte";
+  import BackToHome from "../components/BackToHome.svelte";
   import dayjs from "../helpers/dayjs";
   import MessageRepository from "../repositories/message";
 
@@ -37,7 +37,7 @@
 </script>
 
 <div class="container">
-  <div class="title">チャットページ</div>
+  <div class="title">Inishie チャットページ</div>
   <form class="form" on:submit|preventDefault={submit}>
     <div class="form-row">
       <div class="form-control">
@@ -74,7 +74,7 @@
       </li>
     {/each}
   </ul>
-  <BackToTop />
+  <BackToHome />
 </div>
 
 <style>
@@ -144,6 +144,8 @@
   }
 
   .messages {
+    max-width: 800px;
+    margin: auto;
     padding-left: 0;
     list-style: none;
   }
@@ -152,6 +154,7 @@
     display: flex;
     flex-direction: column;
     justify-content: stretch;
+    padding: 0.3rem 0;
     text-align: left;
     border-bottom: 2px solid #000;
   }

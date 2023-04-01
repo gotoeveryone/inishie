@@ -17,8 +17,9 @@
   {#each items as item}
     <tr>
       <td>
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <a on:click={() => click(item)}>{item.label}</a>
+        <a href={"javascript:void(0)"} on:click={() => click(item)}
+          >{item.label}</a
+        >
         {#if item.isNew}
           <span class="is-new">NEW!</span>
         {/if}

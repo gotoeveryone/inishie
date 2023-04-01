@@ -33,5 +33,6 @@
     width: 25px;
     color: rgb(21, 172, 114);
     font-weight: bold;
+    font-size: 18px;
   }
 </style>

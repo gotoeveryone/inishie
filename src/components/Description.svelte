@@ -8,6 +8,7 @@
     <Counter />
     <span>人目の大事なお客様です。</span>
   </div>
+  <div>前回のキリ番は <span class="highlight">{name}</span> さんでした。</div>
 </div>
 
 <style>

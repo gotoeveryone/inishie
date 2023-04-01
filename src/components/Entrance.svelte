@@ -17,10 +17,10 @@
 
 <div>
   <div>↓のどれかに本当の入口があるよ！</div>
-  <div class="links">
+  <div class="entrance">
     {#each [...Array(max).keys()] as _, i}
-      <a href={"javascript:void(0)"} on:click={() => click(i + 1)} class="link"
-        >{i + 1}</a
+      <button on:click={() => click(i + 1)} class="entrance-item"
+        >{i + 1}</button
       >
     {/each}
   </div>
@@ -28,21 +28,24 @@
 </div>
 
 <style>
-  .links {
+  .entrance {
     margin: 5px auto;
-    max-width: 400px;
+    max-width: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  .link {
+  .entrance-item {
+    flex-basis: 60px;
     display: block;
     margin: 3px;
-    width: 20px;
-    height: 20px;
-    border: 1px solid #00f;
-    border-bottom-width: 2px;
+    border: 1px solid black;
+    background-color: transparent;
+  }
+
+  .entrance-item:nth-child(even) {
+    background-color: #999;
   }
 </style>
