@@ -45,7 +45,7 @@
     background-color: transparent;
   }
 
-  .entrance-item:nth-child(odd) {
+  .entrance-item:nth-child(even) {
     background-color: #999;
   }
 </style>

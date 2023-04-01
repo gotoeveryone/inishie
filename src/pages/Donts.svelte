@@ -1,5 +1,5 @@
 <script lang="ts">
-  import BackToTop from "../components/BackToTop.svelte";
+  import BackToHome from "../components/BackToHome.svelte";
 </script>
 
 <h1>べからず集</h1>
@@ -18,7 +18,7 @@
   <li>チャット・掲示板の荒らし行為は厳禁です</li>
   <li>ルールやマナーがわからない、守れない場合は半年 ROM りましょう</li>
 </ul>
-<BackToTop />
+<BackToHome />
 
 <style>
   h1 {

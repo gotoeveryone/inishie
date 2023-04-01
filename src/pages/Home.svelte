@@ -1,22 +1,15 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import AppDescription from "../components/Description.svelte";
+  import { link } from "svelte-spa-router";
   import AppFooter from "../components/Footer.svelte";
-  import AppEntrance from "../components/Entrance.svelte";
   import AppTable from "../components/Table.svelte";
-  import AccessLogRepository from "../repositories/access_log";
 
-  const repo = new AccessLogRepository();
-
-  const names = ["太郎", "次郎", "三郎"];
-  const name = names[Math.floor(Math.random() * names.length)];
   const items = [
     {
       isNew: true,
       link: "/chat",
       label: "チャット",
       description:
-        "チャット開設しました。<br/>お気軽にコメントしていってください！",
+        "チャット開設しました。<br/>お気軽にコメントしていってください！<br/>キリ番報告もこちらからどうぞ！",
     },
     {
       isNew: true,
@@ -29,48 +22,19 @@
       label: "メインコンテンツ",
       description: "当サイトのメインコンテンツです",
     },
-    {
-      isNew: false,
-      label: "掲示板",
-      description: "キリ番報告はこちらからどうぞ",
-    },
     { isNew: false, label: "リンク集", description: "相互リンク歓迎！" },
   ];
-
-  let isShowTable = false;
-  const showTable = () => {
-    isShowTable = true;
-  };
-  const hideTable = () => {
-    isShowTable = false;
-  };
-
-  if (!process.env.DEBUG) {
-    onMount(async () => {
-      const userAgent = window.navigator.userAgent;
-      return repo.create(userAgent).catch(console.error);
-    });
-  }
 </script>
 
 <h1>-Inishie-</h1>
-<AppDescription />
-<div>前回のキリ番は <span class="highlight">{name}</span> さんでした。</div>
-<div class="marquee">
-  <div class="marquee-inner">
-    Inishie へようこそ！ゆっくりしていってください。
+<div>
+  <div class="table">
+    <AppTable {items} />
+  </div>
+  <div class="back-link">
+    <a href={"javascript:void(0)"} use:link={"/"}>戻る</a>
   </div>
 </div>
-{#if isShowTable}
-  <center>
-    <AppTable {items} />
-  </center>
-  <div class="back-link">
-    <a href={"javascript:void(0)"} on:click={hideTable}>戻る</a>
-  </div>
-{:else}
-  <AppEntrance on:show={showTable} />
-{/if}
 <AppFooter />
 
 <style>
@@ -83,28 +47,10 @@
     letter-spacing: 1.2rem;
   }
 
-  .highlight {
-    font-weight: bold;
-    font-style: italic;
-    font-size: 120%;
-    color: red;
-  }
-
-  .marquee {
-    margin: 5px auto;
-    overflow: hidden;
-  }
-
-  .marquee-inner {
-    animation-name: marqueeAnimation;
-    animation-timing-function: linear;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-
-    margin: 0;
-    padding: 0;
-    display: block;
-    white-space: nowrap;
+  .table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .back-link {
