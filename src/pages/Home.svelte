@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import AppDescription from "../components/Description.svelte";
   import AppFooter from "../components/Footer.svelte";
-  import AppLinks from "../components/Links.svelte";
+  import AppEntrance from "../components/Entrance.svelte";
   import AppTable from "../components/Table.svelte";
   import AccessLogRepository from "../repositories/access_log";
 
@@ -69,7 +69,7 @@
     <a href={"javascript:void(0)"} on:click={hideTable}>戻る</a>
   </div>
 {:else}
-  <AppLinks on:show={showTable} />
+  <AppEntrance on:show={showTable} />
 {/if}
 <AppFooter />
 
