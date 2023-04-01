@@ -3,6 +3,7 @@
   "include": ["src/**/*"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*"],
   "compilerOptions": {
-    "types": ["svelte", "node", "jest"]
+    "types": ["svelte", "node", "jest"],
+    "ignoreDeprecations": "5.0"
   }
 }
