@@ -104,8 +104,9 @@ dist
 .tern-port
 
 # Editor
-.idea
-.vscode
+/.idea
+/.vscode/*
+!/.vscode/extensions.json
 
 build
 
