@@ -30,7 +30,7 @@
     "svelte-jester": "^2.3.2",
     "svelte-preprocess": "^5.0.4",
     "svelte-spa-router": "^3.3.0",
-    "ts-jest": "^29.1.0",
+    "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
     "tslib": "^2.5.3",
     "typescript": "^5.1.3"
