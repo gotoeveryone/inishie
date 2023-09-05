@@ -18,7 +18,7 @@ jobs:
         if: ${{ steps.node_cache.outputs.cache-hit != 'true' }}
         run: npm i
       - name: Run format check
-        run: npm run validate
+        run: npm run check
   test:
     runs-on: ubuntu-latest
     container:

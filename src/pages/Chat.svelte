@@ -3,6 +3,7 @@
   import BackToHome from "../components/BackToHome.svelte";
   import dayjs from "../helpers/dayjs";
   import MessageRepository from "../repositories/message";
+  import type { Message } from "../types/message";
 
   const repo = new MessageRepository();
 
@@ -27,7 +28,7 @@
       .catch(console.error);
   };
 
-  let messages = [];
+  let messages = [] as Message[];
 
   onMount(async () => {
     repo.broadcast((data) => {

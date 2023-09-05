@@ -1,12 +1,12 @@
-import '@testing-library/jest-dom';
+import { beforeEach, vi } from "vitest";
 
-jest.mock('firebase/database', () => ({
-  get: jest.fn(),
-  getDatabase: jest.fn(),
-  push: jest.fn(),
-  ref: jest.fn(),
+vi.mock("firebase/database", async () => ({
+  get: vi.fn(),
+  getDatabase: vi.fn(),
+  push: vi.fn(),
+  ref: vi.fn(),
 }));
 
 beforeEach(() => {
-  jest.clearAllMocks();
-})
+  vi.clearAllMocks();
+});

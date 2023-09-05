@@ -4,7 +4,7 @@
 
 ## Requirements
 
-- nodejs
+- Node.js 16.x
 
 ## Setup
 
@@ -18,8 +18,14 @@ $ npm i
 $ npm run dev
 ```
 
-## Validate
+## Format check
 
 ```console
-$ npm run validate
+$ npm run check
+```
+
+## Test
+
+```console
+$ npm run test
 ```
