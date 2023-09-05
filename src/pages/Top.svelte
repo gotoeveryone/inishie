@@ -13,7 +13,7 @@
 
   const moveToHome = () => push("/home");
 
-  if (!process.env.DEBUG) {
+  if (!(import.meta as any).env.DEV) {
     onMount(async () => {
       const userAgent = window.navigator.userAgent;
       return repo.create(userAgent).catch(console.error);
@@ -23,7 +23,7 @@
 
 <h1>-Inishie-</h1>
 <AppDescription />
-<div>前回のキリ番は <span class="highlight">{name}</span> さんでした。</div>
+<div>前回のキリ番は!!! <span class="highlight">{name}</span> さんでした。</div>
 <div class="marquee">
   <div class="marquee-inner">
     Inishie へようこそ！ゆっくりしていってください。
