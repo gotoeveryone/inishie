@@ -8,7 +8,7 @@ import {
   ref,
 } from "firebase/database";
 import type { DatabaseReference } from "firebase/database";
-import type { Message } from "../types/message";
+import type { Message } from "@/types/message";
 
 export default class MessageRepository {
   private ref: DatabaseReference;
