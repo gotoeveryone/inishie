@@ -1,7 +1,7 @@
 <script lang="ts">
   import { link } from "svelte-spa-router";
-  import AppFooter from "../components/Footer.svelte";
-  import AppTable from "../components/Table.svelte";
+  import AppFooter from "@/components/Footer.svelte";
+  import AppTable from "@/components/Table.svelte";
 
   const items = [
     {

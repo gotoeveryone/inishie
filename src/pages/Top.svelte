@@ -1,10 +1,10 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { push } from "svelte-spa-router";
-  import AppDescription from "../components/Description.svelte";
-  import AppFooter from "../components/Footer.svelte";
-  import AppEntrance from "../components/Entrance.svelte";
-  import AccessLogRepository from "../repositories/access_log";
+  import AppDescription from "@/components/Description.svelte";
+  import AppFooter from "@/components/Footer.svelte";
+  import AppEntrance from "@/components/Entrance.svelte";
+  import AccessLogRepository from "@/repositories/access_log";
 
   const repo = new AccessLogRepository();
 

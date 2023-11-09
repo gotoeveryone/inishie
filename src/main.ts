@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import App from "./App.svelte";
+import App from "@/App.svelte";
 
 document.oncontextmenu = () => {
   alert("\t※※※注意※※※\n★★★右クリック禁止！★★★");

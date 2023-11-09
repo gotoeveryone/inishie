@@ -1,9 +1,9 @@
 <script lang="ts">
   import Router from "svelte-spa-router";
-  import Chat from "./pages/Chat.svelte";
-  import Top from "./pages/Top.svelte";
-  import Home from "./pages/Home.svelte";
-  import Donts from "./pages/Donts.svelte";
+  import Chat from "@/pages/Chat.svelte";
+  import Top from "@/pages/Top.svelte";
+  import Home from "@/pages/Home.svelte";
+  import Donts from "@/pages/Donts.svelte";
 
   const routes = {
     "/": Top,

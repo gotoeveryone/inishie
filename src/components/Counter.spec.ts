@@ -1,7 +1,7 @@
 import { render, waitFor } from "@testing-library/svelte";
 import { describe, expect, test, vi } from "vitest";
-import Component from "./Counter.svelte";
-import AccessLogRepository from "../repositories/access_log";
+import Component from "@/components/Counter.svelte";
+import AccessLogRepository from "@/repositories/access_log";
 
 vi.mock("../repositories/access_log");
 

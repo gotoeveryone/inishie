@@ -1,11 +1,15 @@
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { defineConfig } from "vitest/config";
 
-// NOTE: 現在はテストでのみ vite を利用している
 export default defineConfig({
   plugins: [svelte()],
   server: {
     port: 8080,
+  },
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
   },
   test: {
     watch: false,
