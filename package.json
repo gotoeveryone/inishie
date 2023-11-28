@@ -10,7 +10,7 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.5.2",
+    "@sveltejs/vite-plugin-svelte": "^2.5.3",
     "@testing-library/svelte": "^4.0.3",
     "@tsconfig/svelte": "^5.0.2",
     "svelte": "^4.2.7",
