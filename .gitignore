@@ -118,3 +118,6 @@ build
 
 # Firebase
 .firebaserc
+
+# SvelteKit
+/.svelte-kit

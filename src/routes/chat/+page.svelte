@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import BackToHome from "@/components/BackToHome.svelte";
-  import dayjs from "@/helpers/dayjs";
-  import MessageRepository from "@/repositories/message";
-  import type { Message } from "@/types/message";
+  import BackToHome from "$lib/components/BackToHome.svelte";
+  import dayjs from "$lib/helpers/dayjs";
+  import MessageRepository from "$lib/repositories/message";
+  import type { Message } from "$lib/types/message";
 
   const repo = new MessageRepository();
 
