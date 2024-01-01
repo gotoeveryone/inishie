@@ -8,9 +8,6 @@
 
   const repo = new AccessLogRepository();
 
-  const names = ["太郎", "次郎", "三郎"];
-  const name = names[Math.floor(Math.random() * names.length)];
-
   const moveToHome = () => push("/home");
 
   if (!(import.meta as any).env.DEV) {
@@ -23,7 +20,6 @@
 
 <h1>-Inishie-</h1>
 <AppDescription />
-<div>前回のキリ番は!!! <span class="highlight">{name}</span> さんでした。</div>
 <div class="marquee">
   <div class="marquee-inner">
     Inishie へようこそ！ゆっくりしていってください。
@@ -40,13 +36,6 @@
     text-transform: uppercase;
     font-size: 6rem;
     letter-spacing: 1.2rem;
-  }
-
-  .highlight {
-    font-weight: bold;
-    font-style: italic;
-    font-size: 120%;
-    color: red;
   }
 
   .marquee {

@@ -1,5 +1,8 @@
 <script lang="ts">
   import Counter from "@/components/Counter.svelte";
+
+  const names = ["太郎", "次郎", "三郎"];
+  const name = names[Math.floor(Math.random() * names.length)];
 </script>
 
 <div>
@@ -19,6 +22,13 @@
     margin: 10px auto;
     color: #000;
     font-style: italic;
+  }
+
+  .highlight {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 120%;
+    color: red;
   }
 
   @media (max-width: 639px) {
