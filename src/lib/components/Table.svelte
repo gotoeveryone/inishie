@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { push } from "svelte-spa-router";
+  import { goto } from '$app/navigation';
 
   interface Item {
     isNew: boolean;
@@ -10,7 +10,7 @@
 
   export let items: Item[];
   const click = (item: Item) =>
-    item.link ? push(item.link) : alert("工事中！");
+    item.link ? goto(item.link) : alert("工事中！");
 </script>
 
 <table>

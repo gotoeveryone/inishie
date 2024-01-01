@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import AccessLogRepository from "@/repositories/access_log";
+  import AccessLogRepository from "$lib/repositories/access_log";
 
   const repo = new AccessLogRepository();
 

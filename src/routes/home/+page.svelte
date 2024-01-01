@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { link } from "svelte-spa-router";
-  import AppFooter from "@/components/Footer.svelte";
-  import AppTable from "@/components/Table.svelte";
+  import AppFooter from "$lib/components/Footer.svelte";
+  import AppTable from "$lib/components/Table.svelte";
 
   const items = [
     {
@@ -32,7 +31,7 @@
     <AppTable {items} />
   </div>
   <div class="back-link">
-    <a href={"javascript:void(0)"} use:link={"/"}>戻る</a>
+    <a href={"/"}>戻る</a>
   </div>
 </div>
 <AppFooter />

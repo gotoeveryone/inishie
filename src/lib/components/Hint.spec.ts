@@ -1,6 +1,6 @@
 import { render } from "@testing-library/svelte";
 import { describe, expect, test } from "vitest";
-import Component from "@/components/Hint.svelte";
+import Component from "$lib/components/Hint.svelte";
 
 describe("Hint", () => {
   test("当たりが最大値と一致する場合「一番大きい数」と表示される", () => {

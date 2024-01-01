@@ -1,6 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
-  import Hint from "@/components/Hint.svelte";
+  import Hint from "$lib/components/Hint.svelte";
 
   const dispatch = createEventDispatcher();
 
