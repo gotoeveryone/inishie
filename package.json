@@ -19,6 +19,7 @@
     "vitest": "^0.34.6"
   },
   "dependencies": {
+    "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.30.3",
     "dayjs": "^1.11.10",
     "firebase": "^10.7.1"
