@@ -1,5 +1,11 @@
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from "vitest/config";
+import { sveltekit } from "@sveltejs/kit/vite";
+import { defineConfig } from "vite";
+import type { UserConfig } from "vite";
+import type { InlineConfig } from "vitest";
+
+interface VitestConfigExport extends UserConfig {
+  test: InlineConfig;
+}
 
 export default defineConfig({
   plugins: [sveltekit()],
@@ -19,4 +25,4 @@ export default defineConfig({
     setupFiles: ["src/setup-test.ts"],
     alias: [{ find: /^svelte$/, replacement: "svelte/internal" }],
   },
-});
+} as VitestConfigExport);
