@@ -1,40 +1,40 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import BackToHome from "$lib/components/BackToHome.svelte";
-  import dayjs from "$lib/helpers/dayjs";
-  import MessageRepository from "$lib/repositories/message";
-  import type { Message } from "$lib/types/message";
+import { onMount } from "svelte";
+import BackToHome from "$lib/components/BackToHome.svelte";
+import dayjs from "$lib/helpers/dayjs";
+import MessageRepository from "$lib/repositories/message";
+import type { Message } from "$lib/types/message";
 
-  const repo = new MessageRepository();
+const repo = new MessageRepository();
 
-  let username: string = "";
-  let content: string = "";
+let username: string = "";
+let content: string = "";
 
-  const submit = async () => {
-    if (username.length === 0) {
-      alert("※ユーザー名は必須です！");
-      return;
-    }
-    if (content.length === 0) {
-      alert("※メッセージは必須です！");
-      return;
-    }
-    return repo
-      .create(username, content)
-      .then(async () => {
-        // コンテンツは投稿のたびクリアする
-        content = "";
-      })
-      .catch(console.error);
-  };
+const submit = async () => {
+	if (username.length === 0) {
+		alert("※ユーザー名は必須です！");
+		return;
+	}
+	if (content.length === 0) {
+		alert("※メッセージは必須です！");
+		return;
+	}
+	return repo
+		.create(username, content)
+		.then(async () => {
+			// コンテンツは投稿のたびクリアする
+			content = "";
+		})
+		.catch(console.error);
+};
 
-  let messages = [] as Message[];
+let messages = [] as Message[];
 
-  onMount(async () => {
-    repo.broadcast((data) => {
-      messages = data;
-    });
-  });
+onMount(async () => {
+	repo.broadcast((data) => {
+		messages = data;
+	});
+});
 </script>
 
 <div class="container">

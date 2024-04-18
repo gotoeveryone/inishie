@@ -1,31 +1,35 @@
 {
-  "name": "inishie",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "test": "vitest"
-  },
-  "devDependencies": {
-    "@testing-library/svelte": "^4.0.3",
-    "svelte": "^4.2.14",
-    "svelte-check": "^3.6.9",
-    "svelte-preprocess": "^5.1.3",
-    "typescript": "^5.4.5",
-    "vite": "^4.5.3",
-    "vitest": "^1.5.0"
-  },
-  "dependencies": {
-    "@sveltejs/adapter-static": "^2.0.3",
-    "@sveltejs/kit": "^1.30.4",
-    "dayjs": "^1.11.10",
-    "firebase": "^10.11.0"
-  },
-  "engines": {
-    "node": ">=18 <19"
-  },
-  "type": "module"
+	"name": "inishie",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"biome": "biome format ./src",
+		"lint": "npm run check && npm run biome",
+		"format": "npm run biome -- --write",
+		"test": "vitest"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.7.0",
+		"@testing-library/svelte": "^4.0.3",
+		"svelte": "^4.2.14",
+		"svelte-check": "^3.6.9",
+		"svelte-preprocess": "^5.1.3",
+		"typescript": "^5.4.5",
+		"vite": "^4.5.3",
+		"vitest": "^1.5.0"
+	},
+	"dependencies": {
+		"@sveltejs/adapter-static": "^2.0.3",
+		"@sveltejs/kit": "^1.30.4",
+		"dayjs": "^1.11.10",
+		"firebase": "^10.11.0"
+	},
+	"engines": {
+		"node": ">=18 <19"
+	},
+	"type": "module"
 }

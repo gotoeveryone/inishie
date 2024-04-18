@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Counter from "$lib/components/Counter.svelte";
+import Counter from "$lib/components/Counter.svelte";
 
-  const names = ["太郎", "次郎", "三郎"];
-  const name = names[Math.floor(Math.random() * names.length)];
+const names = ["太郎", "次郎", "三郎"];
+const name = names[Math.floor(Math.random() * names.length)];
 </script>
 
 <div>

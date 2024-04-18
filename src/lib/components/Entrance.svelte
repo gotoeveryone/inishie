@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte";
-  import Hint from "$lib/components/Hint.svelte";
+import { createEventDispatcher } from "svelte";
+import Hint from "$lib/components/Hint.svelte";
 
-  const dispatch = createEventDispatcher();
+const dispatch = createEventDispatcher();
 
-  const max = 10;
-  const hitNumber = Math.ceil(Math.random() * max);
-  const click = (num: number) => {
-    if (hitNumber !== num) {
-      alert("はずれ！(>_<)");
-      return;
-    }
-    dispatch("show");
-  };
+const max = 10;
+const hitNumber = Math.ceil(Math.random() * max);
+const click = (num: number) => {
+	if (hitNumber !== num) {
+		alert("はずれ！(>_<)");
+		return;
+	}
+	dispatch("show");
+};
 </script>
 
 <div>

@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import AccessLogRepository from "$lib/repositories/access_log";
+import { onMount } from "svelte";
+import AccessLogRepository from "$lib/repositories/access_log";
 
-  const repo = new AccessLogRepository();
+const repo = new AccessLogRepository();
 
-  let count = 0;
-  $: counter = count.toString().padStart(6, "0");
+let count = 0;
+$: counter = count.toString().padStart(6, "0");
 
-  onMount(async () => {
-    count = await repo.count();
-  });
+onMount(async () => {
+	count = await repo.count();
+});
 </script>
 
 <div class="counter">
