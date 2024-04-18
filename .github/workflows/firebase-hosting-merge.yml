@@ -18,18 +18,15 @@ jobs:
       VITE_DATABASE_URL: "${{ secrets.FIREBASE_DATABASE_URL }}"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "18.16"
-      - name: Cache node modules
-        uses: actions/cache@v3
-        id: node_cache
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-node_modules-${{ hashFiles('**/package-lock.json') }}
-      - run: npm ci && npm run build
+          cache: "npm"
+          cache-dependency-path: package-lock.json
+      - name: Build
+        run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"

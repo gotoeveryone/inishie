@@ -1,28 +1,28 @@
 <script lang="ts">
-  import AppFooter from "$lib/components/Footer.svelte";
-  import AppTable from "$lib/components/Table.svelte";
+import AppFooter from "$lib/components/Footer.svelte";
+import AppTable from "$lib/components/Table.svelte";
 
-  const items = [
-    {
-      isNew: true,
-      link: "/chat",
-      label: "チャット",
-      description:
-        "チャット開設しました。<br/>お気軽にコメントしていってください！<br/>キリ番報告もこちらからどうぞ！",
-    },
-    {
-      isNew: true,
-      link: "/bekarazu",
-      label: "べからず集",
-      description: "はじめにこちらをご覧ください",
-    },
-    {
-      isNew: false,
-      label: "メインコンテンツ",
-      description: "当サイトのメインコンテンツです",
-    },
-    { isNew: false, label: "リンク集", description: "相互リンク歓迎！" },
-  ];
+const items = [
+	{
+		isNew: true,
+		link: "/chat",
+		label: "チャット",
+		description:
+			"チャット開設しました。<br/>お気軽にコメントしていってください！<br/>キリ番報告もこちらからどうぞ！",
+	},
+	{
+		isNew: true,
+		link: "/bekarazu",
+		label: "べからず集",
+		description: "はじめにこちらをご覧ください",
+	},
+	{
+		isNew: false,
+		label: "メインコンテンツ",
+		description: "当サイトのメインコンテンツです",
+	},
+	{ isNew: false, label: "リンク集", description: "相互リンク歓迎！" },
+];
 </script>
 
 <h1>-Inishie-</h1>

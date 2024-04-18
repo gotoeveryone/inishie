@@ -1,16 +1,15 @@
 <script lang="ts">
-  import { goto } from '$app/navigation';
+import { goto } from "$app/navigation";
 
-  interface Item {
-    isNew: boolean;
-    label: string;
-    link?: string;
-    description: string;
-  }
+interface Item {
+	isNew: boolean;
+	label: string;
+	link?: string;
+	description: string;
+}
 
-  export let items: Item[];
-  const click = (item: Item) =>
-    item.link ? goto(item.link) : alert("工事中！");
+export let items: Item[];
+const click = (item: Item) => (item.link ? goto(item.link) : alert("工事中！"));
 </script>
 
 <table>

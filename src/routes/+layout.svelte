@@ -1,32 +1,32 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-	import '../app.css';
+import { onMount } from "svelte";
+import "../app.css";
 
-  let stalker: HTMLElement;
+let stalker: HTMLElement;
 
-  onMount(() => {
-    document.addEventListener("mousemove", (e) => {
-      stalker.style.transform =
-        "translate(" + e.clientX + "px, " + e.clientY + "px)";
-    });
-    document.oncontextmenu = () => {
-      alert("\t※※※注意※※※\n★★★右クリック禁止！★★★");
-      return false;
-    };
-    // ServiceWorker の登録
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("/serviceWorker.js")
-        .then((registration) => {
-          if (typeof registration.update == "function") {
-            registration.update();
-          }
-        })
-        .catch((error) => {
-          console.log("Error Log: " + error);
-        });
-    }
-  });
+onMount(() => {
+	document.addEventListener("mousemove", (e) => {
+		stalker.style.transform =
+			"translate(" + e.clientX + "px, " + e.clientY + "px)";
+	});
+	document.oncontextmenu = () => {
+		alert("\t※※※注意※※※\n★★★右クリック禁止！★★★");
+		return false;
+	};
+	// ServiceWorker の登録
+	if ("serviceWorker" in navigator) {
+		navigator.serviceWorker
+			.register("/serviceWorker.js")
+			.then((registration) => {
+				if (typeof registration.update == "function") {
+					registration.update();
+				}
+			})
+			.catch((error) => {
+				console.log("Error Log: " + error);
+			});
+	}
+});
 </script>
 
 <main>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import BackToHome from "$lib/components/BackToHome.svelte";
+import BackToHome from "$lib/components/BackToHome.svelte";
 </script>
 
 <h1>べからず集</h1>
