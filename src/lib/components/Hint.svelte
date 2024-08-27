@@ -18,5 +18,5 @@ const hintLabel = () => {
 
 <div class="mx-auto mt-1 mb-3 max-w-[400px]">
   <div class="font-bold text-lg">↓↓↓ヒント↓↓↓</div>
-  <div class="mt-[200px] text-transparent selection:bg-gray-600 selection:text-white">{hintLabel()}</div>
+  <div class="mt-[200px] text-transparent selection:bg-gray-600 selection:text-white" data-itemname="hint-label">{hintLabel()}</div>
 </div>
