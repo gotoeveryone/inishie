@@ -18,7 +18,7 @@ if (!(import.meta as any).env.DEV) {
 }
 </script>
 
-<h1>-Inishie-</h1>
+<h1 class="italic font-bold uppercase leading-normal text-4xl md:text-8xl text-red-500 tracking-[1.2rem]">-Inishie-</h1>
 <AppDescription />
 <div class="marquee">
   <div class="marquee-inner">
@@ -29,15 +29,6 @@ if (!(import.meta as any).env.DEV) {
 <AppFooter />
 
 <style>
-  h1 {
-    color: #ff3e00;
-    font-style: italic;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 6rem;
-    letter-spacing: 1.2rem;
-  }
-
   .marquee {
     margin: 5px auto;
     overflow: hidden;
@@ -61,12 +52,6 @@ if (!(import.meta as any).env.DEV) {
     }
     100% {
       transform: translate(-65%);
-    }
-  }
-
-  @media (max-width: 639px) {
-    h1 {
-      font-size: 2rem;
     }
   }
 </style>

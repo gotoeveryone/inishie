@@ -12,27 +12,8 @@ onMount(async () => {
 });
 </script>
 
-<div class="counter">
+<div class="flex items-center justify-center mx-2 bg-black w-[140px] h-[30px]">
   {#each counter as i}
-    <div class="counter-item">{i}</div>
+    <div class="text-green-600 font-bold text-lg w-[25px]">{i}</div>
   {/each}
 </div>
-
-<style>
-  .counter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 5px;
-    width: 140px;
-    height: 30px;
-    background-color: #000;
-  }
-
-  .counter-item {
-    width: 25px;
-    color: rgb(21, 172, 114);
-    font-weight: bold;
-    font-size: 18px;
-  }
-</style>

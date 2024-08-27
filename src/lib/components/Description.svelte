@@ -6,34 +6,10 @@ const name = names[Math.floor(Math.random() * names.length)];
 </script>
 
 <div>
-  <div class="description">
+  <div class="flex items-center justify-center flex-col md:flex-col mx-auto my-2 md:my-4 italic text-black">
     <span>あなたは</span>
     <Counter />
     <span>人目の大事なお客様です。</span>
   </div>
-  <div>前回のキリ番は <span class="highlight">{name}</span> さんでした。</div>
+  <div>前回のキリ番は <span class="font-bold italic text-xl text-red-600">{name}</span> さんでした。</div>
 </div>
-
-<style>
-  .description {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px auto;
-    color: #000;
-    font-style: italic;
-  }
-
-  .highlight {
-    font-weight: bold;
-    font-style: italic;
-    font-size: 120%;
-    color: red;
-  }
-
-  @media (max-width: 639px) {
-    .description {
-      flex-direction: column;
-    }
-  }
-</style>

@@ -17,35 +17,12 @@ const click = (num: number) => {
 
 <div>
   <div>↓のどれかに本当の入口があるよ！</div>
-  <div class="entrance">
+  <div class="flex items-center justify-center flex-wrap mx-auto my-2 max-w-[350px]">
     {#each [...Array(max).keys()] as _, i}
-      <button on:click={() => click(i + 1)} class="entrance-item"
+      <button on:click={() => click(i + 1)} class="block m-1 border border-black bg-transparent w-[60px] even:bg-gray-400"
         >{i + 1}</button
       >
     {/each}
   </div>
   <Hint {max} {hitNumber} />
 </div>
-
-<style>
-  .entrance {
-    margin: 5px auto;
-    max-width: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .entrance-item {
-    flex-basis: 60px;
-    display: block;
-    margin: 3px;
-    border: 1px solid black;
-    background-color: transparent;
-  }
-
-  .entrance-item:nth-child(even) {
-    background-color: #999;
-  }
-</style>
