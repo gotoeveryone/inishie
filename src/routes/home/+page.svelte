@@ -1,5 +1,4 @@
 <script lang="ts">
-import AppFooter from "$lib/components/Footer.svelte";
 import AppTable from "$lib/components/Table.svelte";
 
 const items = [
@@ -35,5 +34,4 @@ const items = [
       <a href={"/"}>戻る</a>
     </div>
   </div>
-  <AppFooter />
 </div>

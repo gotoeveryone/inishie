@@ -1,5 +1,6 @@
 <script lang="ts">
 import { onMount } from "svelte";
+import AppFooter from "$lib/components/Footer.svelte";
 import "../app.css";
 
 let stalker: HTMLElement;
@@ -29,25 +30,13 @@ onMount(() => {
 });
 </script>
 
-<main>
+<main class="w-full overflow-auto text-center mt-0 mx-auto mb-8">
   <slot />
 </main>
 <div class="stalker" bind:this={stalker} />
+<AppFooter />
 
 <style>
-  main {
-    width: 100%;
-    overflow: auto;
-    text-align: center;
-    margin: 0 auto 30px;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
-
   .stalker {
     pointer-events: none;
     position: fixed;

@@ -12,7 +12,7 @@ export let items: Item[];
 const click = (item: Item) => (item.link ? goto(item.link) : alert("工事中！"));
 </script>
 
-<table class="border-collapse border-spacing-3 border-2 border-black">
+<table class="border-collapse border-spacing-3 border-2 border-black text-sm md:text-base">
   {#each items as item}
     <tr class="border-2 border-black">
       <td class="p-1 border-2 border-black align-middle">
