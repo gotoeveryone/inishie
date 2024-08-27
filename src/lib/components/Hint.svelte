@@ -16,24 +16,7 @@ const hintLabel = () => {
 };
 </script>
 
-<div class="hint">
-  <h3>↓↓↓ヒント↓↓↓</h3>
-  <div class="hint-label">{hintLabel()}</div>
+<div class="mx-auto mt-1 mb-3 max-w-[400px]">
+  <div class="font-bold text-lg">↓↓↓ヒント↓↓↓</div>
+  <div class="mt-[200px] text-transparent selection:bg-gray-600 selection:text-white" data-itemname="hint-label">{hintLabel()}</div>
 </div>
-
-<style>
-  .hint {
-    max-width: 400px;
-    margin: 5px auto 15px;
-  }
-
-  .hint-label {
-    margin-top: 100px;
-    color: transparent;
-  }
-
-  .hint-label::selection {
-    background-color: #876;
-    color: #ddd;
-  }
-</style>

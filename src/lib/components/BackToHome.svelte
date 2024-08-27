@@ -1,9 +1,3 @@
-<div class="back-link">
+<div class="mt-2">
   <a href={"/home"}>戻る</a>
 </div>
-
-<style>
-  .back-link {
-    margin: 5px auto;
-  }
-</style>

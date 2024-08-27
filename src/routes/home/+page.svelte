@@ -25,49 +25,15 @@ const items = [
 ];
 </script>
 
-<h1>-Inishie-</h1>
-<div>
-  <div class="table">
-    <AppTable {items} />
+<div class="mx-auto px-4 md:px-2 py-4 max-w-[800px]">
+  <h1 class="italic font-bold uppercase leading-normal text-4xl md:text-8xl text-red-500 tracking-[1.2rem]">-Inishie-</h1>
+  <div class="mt-4">
+    <div class="flex items-center justify-center">
+      <AppTable {items} />
+    </div>
+    <div class="mt-2">
+      <a href={"/"}>戻る</a>
+    </div>
   </div>
-  <div class="back-link">
-    <a href={"/"}>戻る</a>
-  </div>
+  <AppFooter />
 </div>
-<AppFooter />
-
-<style>
-  h1 {
-    color: #ff3e00;
-    font-style: italic;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 6rem;
-    letter-spacing: 1.2rem;
-  }
-
-  .table {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .back-link {
-    margin: 5px auto;
-  }
-
-  @keyframes marqueeAnimation {
-    0% {
-      transform: translate(65%);
-    }
-    100% {
-      transform: translate(-65%);
-    }
-  }
-
-  @media (max-width: 639px) {
-    h1 {
-      font-size: 2rem;
-    }
-  }
-</style>

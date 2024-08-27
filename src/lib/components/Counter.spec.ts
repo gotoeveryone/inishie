@@ -13,11 +13,13 @@ describe("Counter", () => {
 			spy.mockResolvedValue(value);
 			const { container } = render(Component);
 
-			expect(container.querySelectorAll(".counter-item")).toHaveLength(6);
+			expect(
+				container.querySelectorAll("[data-itemname='counter-item']"),
+			).toHaveLength(6);
 			await waitFor(() => {
-				return expect(container.querySelector(".counter")!.textContent).toBe(
-					value.toString().padStart(6, "0"),
-				);
+				return expect(
+					container.querySelector("[data-itemname='counter']")!.textContent,
+				).toBe(value.toString().padStart(6, "0"));
 			});
 		},
 	);
