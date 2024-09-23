@@ -13,7 +13,7 @@
 		"test": "vitest"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.8.3",
+		"@biomejs/biome": "^1.9.2",
 		"@testing-library/svelte": "^5.2.1",
 		"svelte": "^4.2.19",
 		"svelte-check": "^4.0.2",
