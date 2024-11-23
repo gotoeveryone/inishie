@@ -1,6 +1,6 @@
 # Inishie
 
-![Build Status](https://github.com/gotoeveryone/inishie/workflows/Build/badge.svg)
+![Build Status](https://github.com/gotoeveryone/inishie/workflows/CI/badge.svg)
 
 ## Requirements
 
