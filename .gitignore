@@ -116,6 +116,9 @@ build
 # asdf
 .tool-versions
 
+# mise
+mise.toml
+
 # Firebase
 .firebaserc
 /.firebase
