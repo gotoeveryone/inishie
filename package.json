@@ -27,7 +27,7 @@
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@sveltejs/kit": "^2.5.7",
 		"dayjs": "^1.11.13",
-		"firebase": "^11.5.0"
+		"firebase": "^11.6.0"
 	},
 	"engines": {
 		"node": ">=20 <21"
