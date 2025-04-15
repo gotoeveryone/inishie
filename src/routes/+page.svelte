@@ -9,12 +9,12 @@ const repo = new AccessLogRepository();
 
 const moveToHome = () => goto("/home");
 
-if (!(import.meta as any).env.DEV) {
-	onMount(async () => {
+onMount(async () => {
+	if (!(import.meta as any).env.DEV) {
 		const userAgent = window.navigator.userAgent;
-		return repo.create(userAgent).catch(console.error);
-	});
-}
+		await repo.create(userAgent).catch(console.error);
+	}
+});
 </script>
 
 <h1 class="italic font-bold uppercase leading-normal text-4xl md:text-8xl text-red-500 tracking-[1.2rem]">-Inishie-</h1>
@@ -24,7 +24,7 @@ if (!(import.meta as any).env.DEV) {
     Inishie へようこそ！ゆっくりしていってください。
   </div>
 </div>
-<AppEntrance on:show={moveToHome} />
+<AppEntrance moveToHome={moveToHome} />
 
 <style>
   .marquee {

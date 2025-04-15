@@ -1,8 +1,7 @@
 <script lang="ts">
-import { createEventDispatcher } from "svelte";
 import Hint from "$lib/components/Hint.svelte";
 
-const dispatch = createEventDispatcher();
+const { moveToHome } = $props();
 
 const max = 10;
 const hitNumber = Math.ceil(Math.random() * max);
@@ -11,7 +10,7 @@ const click = (num: number) => {
 		alert("はずれ！(>_<)");
 		return;
 	}
-	dispatch("show");
+	moveToHome();
 };
 </script>
 
@@ -19,7 +18,7 @@ const click = (num: number) => {
   <div>↓のどれかに本当の入口があるよ！</div>
   <div class="flex items-center justify-center flex-wrap mx-auto my-2 max-w-[350px]">
     {#each [...Array(max).keys()] as _, i}
-      <button on:click={() => click(i + 1)} class="block m-1 border border-black bg-transparent w-[60px] even:bg-gray-400" data-itemname="entrance-item"
+      <button onclick={() => click(i + 1)} class="block m-1 border border-black bg-transparent w-[60px] even:bg-gray-400" data-itemname="entrance-item"
         >{i + 1}</button
       >
     {/each}
