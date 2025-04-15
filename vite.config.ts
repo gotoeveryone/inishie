@@ -1,14 +1,9 @@
 import { sveltekit } from "@sveltejs/kit/vite";
+import { svelteTesting } from '@testing-library/svelte/vite'
 import { defineConfig } from "vite";
-import type { UserConfig } from "vite";
-import type { InlineConfig } from "vitest";
-
-interface VitestConfigExport extends UserConfig {
-  test: InlineConfig;
-}
 
 export default defineConfig({
-  plugins: [sveltekit()],
+  plugins: [sveltekit(), svelteTesting()],
   server: {
     port: 8080,
   },
@@ -23,6 +18,5 @@ export default defineConfig({
     environment: "jsdom",
     include: ["src/**/*.{test,spec}.{js,ts}"],
     setupFiles: ["src/setup-test.ts"],
-    alias: [{ find: /^svelte$/, replacement: "svelte/internal" }],
   },
-} as VitestConfigExport);
+});

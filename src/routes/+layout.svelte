@@ -6,6 +6,7 @@ import "../app.css";
 let stalker: HTMLElement;
 
 onMount(() => {
+	console.log("hogehoge");
 	document.addEventListener("mousemove", (e) => {
 		stalker.style.transform =
 			"translate(" + e.clientX + "px, " + e.clientY + "px)";
@@ -33,7 +34,7 @@ onMount(() => {
 <main class="w-full overflow-auto text-center mt-0 mx-auto mb-8">
   <slot />
 </main>
-<div class="stalker" bind:this={stalker} />
+<div class="stalker" bind:this={stalker}></div>
 <AppFooter />
 
 <style>

@@ -32,6 +32,7 @@ let messages = [] as Message[];
 
 onMount(async () => {
 	repo.broadcast((data) => {
+		console.log("data", data);
 		messages = data;
 	});
 });
@@ -49,7 +50,7 @@ onMount(async () => {
     <div class="flex items-center justify-center w-full my-2">
       <div class="flex items-start md:items-center flex-col md:flex-row w-full">
         <label class="font-bold w-auto md:w-[150px]" for="content">メッセージ</label>
-        <textarea class="mb-0 w-full h-full" rows="4" id="content" bind:value={content} />
+        <textarea class="mb-0 w-full h-full" rows="4" id="content" bind:value={content}></textarea>
       </div>
     </div>
     <div class="flex items-center justify-center w-full my-2">
