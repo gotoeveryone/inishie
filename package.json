@@ -19,7 +19,7 @@
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"@testing-library/svelte": "^5.2.7",
 		"svelte": "^5.27.0",
-		"svelte-check": "^4.1.7",
+		"svelte-check": "^4.2.1",
 		"svelte-preprocess": "^6.0.3",
 		"tailwindcss": "^3.4.17",
 		"typescript": "^5.8.2",
