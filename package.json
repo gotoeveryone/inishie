@@ -28,7 +28,7 @@
 	},
 	"dependencies": {
 		"dayjs": "^1.11.13",
-		"firebase": "^12.1.0"
+		"firebase": "^12.2.1"
 	},
 	"engines": {
 		"node": ">=20 <21"
