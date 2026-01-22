@@ -38,7 +38,7 @@ onMount(async () => {
 });
 </script>
 
-<div class="mx-auto px-4 md:px-2 py-4 max-w-[800px]">
+<div class="mb-6 mx-auto px-4 md:px-2 py-4 max-w-[800px]">
   <div class="font-bold text-pink-400 leading-normal text-4xl">Inishie チャットページ</div>
   <form class="flex items-center justify-center flex-col mx-auto" on:submit|preventDefault={submit}>
     <div class="flex items-center justify-center w-full my-2">
