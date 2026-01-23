@@ -1,11 +1,16 @@
 <script lang="ts">
 import { onMount } from "svelte";
+import { pwaInfo } from "virtual:pwa-info";
+import { registerSW } from "virtual:pwa-register";
 import AppFooter from "$lib/components/Footer.svelte";
 import "../app.css";
 
 let stalker: HTMLElement;
 
+$: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : "";
+
 onMount(() => {
+	registerSW({ immediate: true });
 	document.addEventListener("mousemove", (e) => {
 		stalker.style.transform =
 			"translate(" + e.clientX + "px, " + e.clientY + "px)";
@@ -16,6 +21,10 @@ onMount(() => {
 	};
 });
 </script>
+
+<svelte:head>
+  {@html webManifestLink}
+</svelte:head>
 
 <main class="w-full overflow-auto text-center mt-0 mx-auto mb-8">
   <slot />
