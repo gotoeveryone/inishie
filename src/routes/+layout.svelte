@@ -6,7 +6,6 @@ import "../app.css";
 let stalker: HTMLElement;
 
 onMount(() => {
-	console.log("hogehoge");
 	document.addEventListener("mousemove", (e) => {
 		stalker.style.transform =
 			"translate(" + e.clientX + "px, " + e.clientY + "px)";
