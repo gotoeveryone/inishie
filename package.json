@@ -19,6 +19,7 @@
 		"@sveltejs/vite-plugin-svelte": "^5.1.1",
 		"@tailwindcss/postcss": "^4.1.18",
 		"@testing-library/svelte": "^5.3.1",
+		"@vite-pwa/sveltekit": "^1.1.0",
 		"svelte": "^5.27.0",
 		"svelte-check": "^4.3.5",
 		"svelte-preprocess": "^6.0.3",
