@@ -125,3 +125,4 @@ mise.toml
 
 # SvelteKit
 /.svelte-kit
+dev-dist

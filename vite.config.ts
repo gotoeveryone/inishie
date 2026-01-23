@@ -6,11 +6,8 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [
     sveltekit(),
-    svelteTesting(),
     SvelteKitPWA({
-      strategies: "injectManifest",
-      srcDir: "src",
-      filename: "service-worker.ts",
+      devOptions: { enabled: true },
       manifest: {
         name: "Inishie",
         short_name: "Inishie",
@@ -27,6 +24,7 @@ export default defineConfig({
         theme_color: "#81868f",
       },
     }),
+    svelteTesting(),
   ],
   server: {
     port: 8080,
