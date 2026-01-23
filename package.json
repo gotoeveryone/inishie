@@ -32,7 +32,7 @@
 		"firebase": "^12.8.0"
 	},
 	"engines": {
-		"node": ">=20 <21"
+		"node": ">=24 <25"
 	},
 	"type": "module"
 }
