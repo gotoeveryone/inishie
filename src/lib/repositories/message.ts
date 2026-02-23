@@ -1,6 +1,6 @@
 import {
 	getDatabase,
-	limitToLast,
+	limitToFirst,
 	onValue,
 	orderByChild,
 	push,
@@ -19,7 +19,7 @@ export default class MessageRepository {
 
 	broadcast(callback: (message: Message[]) => void) {
 		onValue(
-			query(this.ref, orderByChild("sortKey"), limitToLast(20)),
+			query(this.ref, orderByChild("sortKey"), limitToFirst(10)),
 			(snapshot) => {
 				const r = [] as Message[];
 				snapshot.forEach((c) => {
