@@ -27,7 +27,7 @@ export default defineConfig({
     svelteTesting(),
   ],
   server: {
-    port: 8080,
+    port: 1240,
   },
   resolve: {
     alias: {
