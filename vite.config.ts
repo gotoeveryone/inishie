@@ -1,11 +1,13 @@
 /// <reference types="vitest/config" />
 import { sveltekit } from "@sveltejs/kit/vite";
 import { SvelteKitPWA } from "@vite-pwa/sveltekit";
+import tailwindcss from '@tailwindcss/vite';
 import { svelteTesting } from "@testing-library/svelte/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [
+    tailwindcss(),
     sveltekit(),
     SvelteKitPWA({
       devOptions: { enabled: true },
