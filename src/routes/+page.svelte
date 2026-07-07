@@ -3,6 +3,7 @@ import { onMount } from "svelte";
 import { goto } from "$app/navigation";
 import AppDescription from "$lib/components/Description.svelte";
 import AppEntrance from "$lib/components/Entrance.svelte";
+import AppRecommendedEnvironment from "$lib/components/RecommendedEnvironment.svelte";
 import AccessLogRepository from "$lib/repositories/access_log";
 
 const repo = new AccessLogRepository();
@@ -25,6 +26,7 @@ onMount(async () => {
   </div>
 </div>
 <AppEntrance moveToHome={moveToHome} />
+<AppRecommendedEnvironment />
 
 <style>
   .marquee {
