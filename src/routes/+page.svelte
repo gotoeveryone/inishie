@@ -5,8 +5,10 @@ import AppDescription from "$lib/components/Description.svelte";
 import AppEntrance from "$lib/components/Entrance.svelte";
 import AppRecommendedEnvironment from "$lib/components/RecommendedEnvironment.svelte";
 import AccessLogRepository from "$lib/repositories/access_log";
+import CounterRepository from "$lib/repositories/counter";
 
 const repo = new AccessLogRepository();
+const counterRepo = new CounterRepository();
 
 const moveToHome = () => goto("/home");
 
@@ -14,6 +16,7 @@ onMount(async () => {
 	if (!(import.meta as any).env.DEV) {
 		const userAgent = window.navigator.userAgent;
 		await repo.create(userAgent).catch(console.error);
+		await counterRepo.increment().catch(console.error);
 	}
 });
 </script>
