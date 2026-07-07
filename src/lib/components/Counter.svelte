@@ -1,14 +1,14 @@
 <script lang="ts">
 import { onMount } from "svelte";
-import AccessLogRepository from "$lib/repositories/access_log";
+import CounterRepository from "$lib/repositories/counter";
 
-const repo = new AccessLogRepository();
+const repo = new CounterRepository();
 
 let count = 0;
 $: counter = count.toString().padStart(6, "0");
 
 onMount(async () => {
-	count = await repo.count();
+	count = await repo.get();
 });
 </script>
 

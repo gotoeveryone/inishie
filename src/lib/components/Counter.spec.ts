@@ -1,15 +1,15 @@
 import { render, waitFor } from "@testing-library/svelte";
 import { describe, expect, test, vi } from "vitest";
 import Component from "$lib/components/Counter.svelte";
-import AccessLogRepository from "$lib/repositories/access_log";
+import CounterRepository from "$lib/repositories/counter";
 
-vi.mock("../repositories/access_log");
+vi.mock("../repositories/counter");
 
 describe("Counter", () => {
 	test.each([0, 50, 1234, 99999, 654321])(
 		"%d が6桁で表示されている",
 		async (value) => {
-			const spy = vi.spyOn(AccessLogRepository.prototype, "count");
+			const spy = vi.spyOn(CounterRepository.prototype, "get");
 			spy.mockResolvedValue(value);
 			const { container } = render(Component);
 
