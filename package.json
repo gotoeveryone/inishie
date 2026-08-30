@@ -30,7 +30,7 @@
 		"vitest": "^4.1.8"
 	},
 	"dependencies": {
-		"dayjs": "^1.11.21",
+		"dayjs": "^1.11.23",
 		"firebase": "^12.18.0"
 	},
 	"engines": {
