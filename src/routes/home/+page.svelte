@@ -1,5 +1,5 @@
 <script lang="ts">
-import AppTable from "$lib/components/Table.svelte";
+import AppTable from "#lib/components/Table.svelte";
 
 const items = [
 	{

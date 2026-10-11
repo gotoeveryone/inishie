@@ -1,11 +1,11 @@
 <script lang="ts">
 import { onMount } from "svelte";
 import { goto } from "$app/navigation";
-import AppDescription from "$lib/components/Description.svelte";
-import AppEntrance from "$lib/components/Entrance.svelte";
-import AppRecommendedEnvironment from "$lib/components/RecommendedEnvironment.svelte";
-import AccessLogRepository from "$lib/repositories/access_log";
-import CounterRepository from "$lib/repositories/counter";
+import AppDescription from "#lib/components/Description.svelte";
+import AppEntrance from "#lib/components/Entrance.svelte";
+import AppRecommendedEnvironment from "#lib/components/RecommendedEnvironment.svelte";
+import AccessLogRepository from "#lib/repositories/access_log.ts";
+import CounterRepository from "#lib/repositories/counter.ts";
 
 const repo = new AccessLogRepository();
 const counterRepo = new CounterRepository();

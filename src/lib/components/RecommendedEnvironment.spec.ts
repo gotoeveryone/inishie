@@ -1,6 +1,6 @@
 import { render, waitFor } from "@testing-library/svelte";
 import { afterEach, describe, expect, test, vi } from "vitest";
-import Component from "$lib/components/RecommendedEnvironment.svelte";
+import Component from "#lib/components/RecommendedEnvironment.svelte";
 
 describe("RecommendedEnvironment", () => {
 	afterEach(() => {

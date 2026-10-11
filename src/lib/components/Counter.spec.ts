@@ -1,7 +1,7 @@
 import { render, waitFor } from "@testing-library/svelte";
 import { describe, expect, test, vi } from "vitest";
-import Component from "$lib/components/Counter.svelte";
-import CounterRepository from "$lib/repositories/counter";
+import Component from "#lib/components/Counter.svelte";
+import CounterRepository from "#lib/repositories/counter.ts";
 
 vi.mock("../repositories/counter");
 
