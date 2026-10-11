@@ -1,6 +1,6 @@
 <script lang="ts">
 import { onMount } from "svelte";
-import CounterRepository from "$lib/repositories/counter";
+import CounterRepository from "#lib/repositories/counter.ts";
 
 const repo = new CounterRepository();
 

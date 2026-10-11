@@ -1,5 +1,5 @@
 <script lang="ts">
-import Hint from "$lib/components/Hint.svelte";
+import Hint from "#lib/components/Hint.svelte";
 
 const { moveToHome } = $props();
 

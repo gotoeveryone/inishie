@@ -1,5 +1,5 @@
 <script lang="ts">
-import BackToHome from "$lib/components/BackToHome.svelte";
+import BackToHome from "#lib/components/BackToHome.svelte";
 </script>
 
 <div class="mx-auto px-4 md:px-2 py-4 max-w-[800px]">
